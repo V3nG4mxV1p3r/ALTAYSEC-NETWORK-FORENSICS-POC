@@ -24,6 +24,11 @@ Geleneksel laboratuvarların aksine, zafiyetli makineler kurmak veya devasa PCAP
 * **Odak Noktası:** Ping Paketi Analizi, Payload İncelemesi, Hex/ASCII Okuma.
 * **Senaryo:** Saldırganlar, ağda hiç dikkat çekmemek için verileri standart `ping` (ICMP) paketlerinin içine saklamıştır. Güvenlik duvarının izin verdiği bu trafiği `tshark -x` parametresiyle detaylı incele, hedefe giden anormal ICMP paketini bul ve paketin veri (load) kısmına gizlenmiş şifreli metni deşifre et.
 
+### 🔴 Level 3: Gece Vardiyası (FTP Brute Force & Data Theft)
+* **Zorluk:** Zor
+* **Odak Noktası:** Uygulama Katmanı (L7) Analizi, TCP Stream İncelemesi, Korelasyon.
+* **Senaryo:** Şirketin FTP sunucusuna yönelik bir kaba kuvvet (`Brute Force`) saldırısı düzenlendi ve başarılı olundu. Saldırganın içeri sızdıktan sonra kritik bir arşivi (`zip`) dışarı aktardığı düşünülüyor. Analizci, kontrol trafiği (`Port 21`) ile veri trafiğini (`Port 20`) korele ederek çalınan parolayı, dosyayı ve dosyanın içindeki gizli veri parçasını (`Base64`) bulmalıdır.
+
 ---
 
 ## 🚀 Lab Nasıl Çalıştırılır?
@@ -35,6 +40,6 @@ docker-compose up -d --build
 ```
 Daha sonra web tarayıcınızı açın ve laboratuvarın çalıştığı porta bağlanın (Örn: Kolay seviye için `http://localhost:8083`, Orta seviye için `http://localhost:8084`).
 
-Karşınıza çıkan analist terminalinde görev dosyasını (cat `gorev.txt`) okuyun, `tshark -r evidence.pcap` komutuyla analize başlayın ve bulgularınızı `./submit` komutunu çalıştırarak sisteme girin!
+Karşınıza çıkan analist terminalinde görev dosyasını (cat `gorev.txt`) okuyun, tshark komutlarıyla analize başlayın ve bulgularınızı `./submit` komutunu çalıştırarak sisteme girin!
 
 Developed by Emir - Information Security Specialist / Blue Team Lab Researcher
