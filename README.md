@@ -42,4 +42,4 @@ Daha sonra web tarayıcınızı açın ve laboratuvarın çalıştığı porta b
 
 Karşınıza çıkan analist terminalinde görev dosyasını (cat `gorev.txt`) okuyun, tshark komutlarıyla analize başlayın ve bulgularınızı `./submit` komutunu çalıştırarak sisteme girin!
 
-Developed by Emir - Information Security Specialist / Blue Team Lab Researcher
+*Developed by Emir - Information Security Specialist / Blue Team Lab Researcher*
